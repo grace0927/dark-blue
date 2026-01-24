@@ -8,7 +8,10 @@
       "Bash(npx tsc:*)",
       "Bash(npm run build:*)",
       "Bash(timeout 30 npm run storybook:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(npm run build:lib:*)",
+      "Bash(tsc:*)",
+      "Bash(npm login)"
     ]
   }
 }

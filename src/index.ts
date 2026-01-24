@@ -1,3 +1,6 @@
+// Styles (side-effect import for CSS bundling)
+import './styles/globals.css'
+
 // Primitives
 export * from './components/primitives'
 

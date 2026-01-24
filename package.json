@@ -1,6 +1,5 @@
 {
   "name": "dark-blue",
-  "private": true,
   "version": "0.1.0",
   "type": "module",
   "main": "dist/index.js",
@@ -8,10 +7,11 @@
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     },
-    "./styles.css": "./dist/styles.css"
+    "./styles": "./dist/style.css",
+    "./styles.css": "./dist/style.css"
   },
   "files": [
     "dist"
@@ -19,7 +19,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "build:lib": "vite build --mode library",
+    "build:lib": "rm -rf dist && vite build --mode library && npx tsc -p tsconfig.lib.json",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",

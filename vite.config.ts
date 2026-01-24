@@ -22,7 +22,7 @@ export default defineConfig(({ mode }) => {
             },
           },
         },
-        cssCodeSplit: false,
+        copyPublicDir: false,
       },
     }
   }
