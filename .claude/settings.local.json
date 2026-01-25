@@ -11,7 +11,10 @@
       "Bash(find:*)",
       "Bash(npm run build:lib:*)",
       "Bash(tsc:*)",
-      "Bash(npm login)"
+      "Bash(npm login)",
+      "Bash(git pull:*)",
+      "Bash(git push:*)",
+      "Bash(git stash:*)"
     ]
   }
 }
