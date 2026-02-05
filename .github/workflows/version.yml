@@ -23,7 +23,9 @@ jobs:
         with:
           node-version: "20"
           registry-url: "https://registry.npmjs.org"
-          corepack: true
+
+      - name: Enable corepack
+        run: corepack enable pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
