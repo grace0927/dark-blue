@@ -1,0 +1,10 @@
+{
+  "$schema": "https://changesets.github.io/config/dist/config.d.ts",
+  "ignore": [],
+  "commit": false,
+  "linked": [],
+  "fixed": [],
+  "baseBranch": "main",
+  "updateDependentsVersions": true,
+  "detectEntryPoint": true
+}
