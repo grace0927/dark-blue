@@ -1,50 +1,93 @@
-# React + TypeScript + Vite
+# dark-blue
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A theme-aware React component library built with Tailwind CSS and Radix UI.
 
-Currently, two official plugins are available:
+## Install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+pnpm add dark-blue
+# or
+npm install dark-blue
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Usage
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Import components from the package root and styles from the `styles` entry point:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```tsx
+import { Button, Card, CardContent } from 'dark-blue'
+import 'dark-blue/styles'
+
+export default function Demo() {
+  return (
+    <Card>
+      <CardContent>
+        <Button>Click me</Button>
+      </CardContent>
+    </Card>
+  )
+}
 ```
+
+### Theming
+
+dark-blue uses class-based dark mode (`class="dark"` on `<html>`). The `useTheme` hook manages the active theme, and `themeScript` is a small inline script you can inject into `<head>` to prevent a flash of unstyled content on SSR / initial load:
+
+```tsx
+import { useTheme, themeScript } from 'dark-blue'
+
+// Inject into <head> before anything else renders
+<script dangerouslySetInnerHTML={{ __html: themeScript }} />
+
+// In your root component
+function App() {
+  const { theme, setTheme } = useTheme() // 'light' | 'dark' | 'system'
+  // ...
+}
+```
+
+## Components
+
+### Primitives
+
+- Button
+- Input
+- Label
+- Checkbox
+- Radio
+- Select
+- Textarea
+
+### Composite
+
+- Card
+- Tabs
+- Accordion
+- Dropdown
+- Modal
+- Toast (includes a `useToast` hook)
+
+### Layout
+
+- Container
+- Stack
+- Grid
+
+## Development
+
+| Command | What it does |
+|---|---|
+| `pnpm dev` | Vite dev server (demo app at localhost:5173) |
+| `pnpm build` | Type-check + build the demo app |
+| `pnpm build:lib` | Production library build → `dist/` |
+| `pnpm lint` | ESLint |
+| `pnpm storybook` | Storybook dev server on port 6006 |
+| `pnpm build-storybook` | Static Storybook build |
+
+Visual and interaction coverage is handled by Storybook + Chromatic. There is no unit-test runner.
+
+## Contributing
+
+1. Make your changes, then run `pnpm changeset` and follow the prompts to describe the change and pick a bump type (`patch` / `minor` / `major`).
+2. Commit the generated `.changeset/*.md` file alongside your code.
+3. Open a PR. On merge to `main`, a "Version Packages" PR is opened automatically — merging that publishes to npm.
