@@ -8,13 +8,13 @@
 
 | Command | What it does |
 |---|---|
-| `npm run dev` | Start Vite dev server (demo app) |
-| `npm run build` | Type-check + build the demo app |
-| `npm run build:lib` | Build the publishable library (`dist/`) |
-| `npm run lint` | Run ESLint |
-| `npm run storybook` | Start Storybook on port 6006 |
-| `npm run build-storybook` | Build a static Storybook site |
-| `npm run preview` | Preview a production build locally |
+| `pnpm dev` | Start Vite dev server (demo app) |
+| `pnpm build` | Type-check + build the demo app |
+| `pnpm build:lib` | Build the publishable library (`dist/`) |
+| `pnpm lint` | Run ESLint |
+| `pnpm storybook` | Start Storybook on port 6006 |
+| `pnpm build-storybook` | Build a static Storybook site |
+| `pnpm preview` | Preview a production build locally |
 
 > There is no test suite currently. Storybook + Chromatic handle visual/interaction coverage.
 
@@ -66,7 +66,7 @@ Each component directory contains the component file and its `.stories.tsx` file
 
 ## Build & publish
 
-- `npm run build:lib` produces `dist/` (ESM bundle + `.d.ts` declarations). Story files and `main.tsx` are excluded from the library build via `tsconfig.lib.json`.
+- `pnpm build:lib` produces `dist/` (ESM bundle + `.d.ts` declarations). Story files and `main.tsx` are excluded from the library build via `tsconfig.lib.json`.
 - Publishing is automated: merging a GitHub release triggers `.github/workflows/publish.yml`, which runs `build:lib` and publishes to npm using the `NPM_TOKEN` secret.
 - Consumers import components from `'dark-blue'` and styles from `'dark-blue/styles'`.
 
@@ -74,7 +74,7 @@ Each component directory contains the component file and its `.stories.tsx` file
 
 - ESLint 9 flat config (`eslint.config.js`). Targets `**/*.{ts,tsx}`, ignores `dist/`.
 - Plugins: `typescript-eslint` (recommended), `react-hooks` (recommended), `react-refresh`.
-- Run with `npm run lint`. Fix before committing.
+- Run with `pnpm lint`. Fix before committing.
 
 ## Things to watch out for
 

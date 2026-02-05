@@ -5,13 +5,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```sh
-npm run dev            # Vite dev server (demo app at localhost:5173)
-npm run build          # tsc type-check + Vite app build
-npm run build:lib      # Production library build → dist/ (what gets published)
-npm run lint           # ESLint (flat config, TS/TSX only)
-npm run storybook      # Storybook dev server on port 6006
-npm run build-storybook
-npm run preview        # Serve the last app build
+pnpm dev               # Vite dev server (demo app at localhost:5173)
+pnpm build             # tsc type-check + Vite app build
+pnpm build:lib         # Production library build → dist/ (what gets published)
+pnpm lint              # ESLint (flat config, TS/TSX only)
+pnpm storybook         # Storybook dev server on port 6006
+pnpm build-storybook
+pnpm preview           # Serve the last app build
 ```
 
 No unit-test runner exists. Visual / interaction coverage is handled by Storybook + Chromatic.
@@ -20,7 +20,7 @@ No unit-test runner exists. Visual / interaction coverage is handled by Storyboo
 
 Vite is configured for two distinct modes in `vite.config.ts`:
 
-- **Default mode** (`npm run dev` / `npm run build`) — builds `index.html` + `src/main.tsx` as a normal React app. Used only for local development/demo.
+- **Default mode** (`pnpm dev` / `pnpm build`) — builds `index.html` + `src/main.tsx` as a normal React app. Used only for local development/demo.
 - **Library mode** (`--mode library`) — entry point is `src/index.ts`. Output is a single ESM file in `dist/`. `react`, `react-dom`, and `react/jsx-runtime` are marked external (never bundled). `copyPublicDir` is disabled.
 
 `tsconfig.lib.json` is a separate TS config that runs alongside the library Vite build. It emits **only** `.d.ts` declarations into `dist/`, and explicitly excludes `*.stories.tsx` and `main.tsx`. If you add a file that should ship with the package but isn't a component (e.g. a new top-level utility), make sure it isn't accidentally excluded here.
@@ -67,4 +67,4 @@ src/index.ts                        →  re-exports the three above + hooks + cn
 
 ## Publish pipeline
 
-`.github/workflows/publish.yml` triggers on a GitHub release being published. It runs `npm run build:lib` and then `npm publish` using the `NPM_TOKEN` secret. The `files` field in `package.json` is `["dist"]`, so only the built output ships. Bump the version in `package.json` before cutting a release.
+`.github/workflows/publish.yml` triggers on a GitHub release being published. It runs `pnpm build:lib` and then `pnpm publish` using the `NPM_TOKEN` secret. The `files` field in `package.json` is `["dist"]`, so only the built output ships. Bump the version in `package.json` before cutting a release.

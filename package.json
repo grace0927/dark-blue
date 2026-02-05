@@ -19,7 +19,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "build:lib": "rm -rf dist && vite build --mode library && npx tsc -p tsconfig.lib.json",
+    "build:lib": "rm -rf dist && vite build --mode library && tsc -p tsconfig.lib.json",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
@@ -47,6 +47,7 @@
     "@storybook/react": "8.0.0",
     "@storybook/react-vite": "^8.0.0",
     "@storybook/test": "8.0.0",
+    "@tailwindcss/postcss": "^4.1.18",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
@@ -71,5 +72,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/grace0927/dark-blue.git"
-  }
+  },
+  "packageManager": "pnpm@10.4.1"
 }
