@@ -38,6 +38,10 @@ const config: Config = {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
         },
+        success: {
+          DEFAULT: 'hsl(var(--success))',
+          foreground: 'hsl(var(--success-foreground))',
+        },
         muted: {
           DEFAULT: 'hsl(var(--muted))',
           foreground: 'hsl(var(--muted-foreground))',
@@ -54,6 +58,11 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        surface: {
+          base: 'hsl(var(--surface-base))',
+          raised: 'hsl(var(--surface-raised))',
+          high: 'hsl(var(--surface-high))',
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -63,6 +72,11 @@ const config: Config = {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
+      },
+      boxShadow: {
+        'glow': '0 0 20px rgba(17, 82, 212, 0.3)',
+        'glow-lg': '0 0 30px rgba(17, 82, 212, 0.4)',
+        'inner-glow': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.05)',
       },
       keyframes: {
         'fade-in': {

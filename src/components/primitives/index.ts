@@ -1,6 +1,7 @@
 export { Label, labelVariants, type LabelProps } from './Label'
 export { Button, buttonVariants, type ButtonProps } from './Button'
 export { Input, inputVariants, type InputProps } from './Input'
+export { PasswordInput, passwordInputVariants, type PasswordInputProps } from './PasswordInput'
 export { Textarea, textareaVariants, type TextareaProps } from './Textarea'
 export { Checkbox, checkboxVariants, type CheckboxProps } from './Checkbox'
 export { Radio, radioVariants, type RadioProps } from './Radio'

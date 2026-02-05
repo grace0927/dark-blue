@@ -7,13 +7,22 @@ const cardVariants = cva(
   {
     variants: {
       variant: {
-        default: 'shadow-sm',
-        outline: 'shadow-none',
-        elevated: 'shadow-md',
+        default: 'shadow-sm border-border',
+        outline: 'shadow-none border-border',
+        elevated: 'shadow-md border-border shadow-inner-glow',
+        glow: 'shadow-sm border-border transition-all duration-200 hover:border-primary hover:shadow-glow',
+        gradient: 'shadow-sm border-transparent bg-gradient-to-b from-card to-card relative before:absolute before:inset-0 before:rounded-lg before:p-[1px] before:bg-gradient-to-b before:from-primary/50 before:to-transparent before:-z-10',
+      },
+      surface: {
+        default: 'bg-card',
+        base: 'bg-surface-base',
+        raised: 'bg-surface-raised',
+        high: 'bg-surface-high',
       },
     },
     defaultVariants: {
       variant: 'default',
+      surface: 'default',
     },
   }
 )
@@ -23,8 +32,8 @@ export interface CardProps
     VariantProps<typeof cardVariants> {}
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ className, variant, ...props }, ref) => (
-    <div ref={ref} className={cn(cardVariants({ variant, className }))} {...props} />
+  ({ className, variant, surface, ...props }, ref) => (
+    <div ref={ref} className={cn(cardVariants({ variant, surface, className }))} {...props} />
   )
 )
 Card.displayName = 'Card'

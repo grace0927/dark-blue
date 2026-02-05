@@ -9,6 +9,7 @@ const inputVariants = cva(
       variant: {
         default: 'border-input',
         error: 'border-destructive focus-visible:ring-destructive',
+        success: 'border-success focus-visible:ring-success',
       },
       inputSize: {
         default: 'h-10',
@@ -25,10 +26,40 @@ const inputVariants = cva(
 
 export interface InputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'>,
-    VariantProps<typeof inputVariants> {}
+    VariantProps<typeof inputVariants> {
+  leadingIcon?: React.ReactNode
+  trailingIcon?: React.ReactNode
+}
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, variant, inputSize, ...props }, ref) => {
+  ({ className, type, variant, inputSize, leadingIcon, trailingIcon, ...props }, ref) => {
+    if (leadingIcon || trailingIcon) {
+      return (
+        <div className="relative">
+          {leadingIcon && (
+            <div className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+              {leadingIcon}
+            </div>
+          )}
+          <input
+            type={type}
+            className={cn(
+              inputVariants({ variant, inputSize, className }),
+              leadingIcon && 'pl-10',
+              trailingIcon && 'pr-10'
+            )}
+            ref={ref}
+            {...props}
+          />
+          {trailingIcon && (
+            <div className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+              {trailingIcon}
+            </div>
+          )}
+        </div>
+      )
+    }
+
     return (
       <input
         type={type}

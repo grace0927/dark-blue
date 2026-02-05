@@ -16,6 +16,10 @@
     --primary-900: 224 64% 33%;
     --primary-950: 226 57% 21%;
 
+    /* Success color (green) */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
     /* Semantic colors - Light mode */
     --background: 0 0% 100%;
     --foreground: 222 47% 11%;
@@ -46,21 +50,29 @@
     --ring: 221 83% 53%;
 
     --radius: 0.5rem;
+
+    /* Surface elevation tokens - Light mode */
+    --surface-base: 0 0% 98%;
+    --surface-raised: 0 0% 100%;
+    --surface-high: 0 0% 100%;
+
+    /* Card border */
+    --card-border: 214 32% 91%;
   }
 
   .dark {
     /* Semantic colors - Dark mode */
-    --background: 222 47% 11%;
+    --background: 220 20% 4%;
     --foreground: 210 40% 98%;
 
-    --card: 222 47% 11%;
+    --card: 220 17% 9%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 47% 11%;
+    --popover: 220 17% 9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 222 47% 11%;
+    --primary: 217 91% 45%;
+    --primary-foreground: 210 40% 98%;
 
     --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
@@ -74,9 +86,21 @@
     --destructive: 0 62% 30%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 224 76% 48%;
+    --border: 220 13% 20%;
+    --input: 220 13% 20%;
+    --ring: 217 91% 45%;
+
+    /* Success color - Dark mode */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    /* Surface elevation tokens - Dark mode (from Stitch) */
+    --surface-base: 220 20% 4%;
+    --surface-raised: 220 17% 13%;
+    --surface-high: 220 13% 20%;
+
+    /* Card border */
+    --card-border: 220 13% 28%;
   }
 }
 

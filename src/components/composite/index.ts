@@ -63,3 +63,34 @@ export {
   type ToastProps,
   type ToastContainerProps,
 } from './Toast'
+
+export {
+  Sidebar,
+  SidebarHeader,
+  SidebarContent,
+  SidebarSection,
+  SidebarItem,
+  SidebarFooter,
+  SidebarToggle,
+  sidebarVariants,
+  sidebarItemVariants,
+  useSidebar,
+  type SidebarProps,
+  type SidebarItemProps,
+} from './Sidebar'
+
+export {
+  Navbar,
+  NavbarBrand,
+  NavbarSearch,
+  NavbarActions,
+  NavbarIconButton,
+  NavbarUser,
+  NavbarIcons,
+  navbarVariants,
+  type NavbarProps,
+  type NavbarBrandProps,
+  type NavbarSearchProps,
+  type NavbarIconButtonProps,
+  type NavbarUserProps,
+} from './Navbar'
