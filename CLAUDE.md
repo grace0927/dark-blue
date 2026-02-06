@@ -65,6 +65,35 @@ src/index.ts                        →  re-exports the three above + hooks + cn
 - `.storybook/preview.ts` applies the theme class via a global decorator — stories automatically respond to the Storybook theme toolbar switcher. No per-story theme setup is needed.
 - Tag every story with `tags: ['autodocs']` to get auto-generated docs pages.
 
-## Publish pipeline
+## Release pipeline (Changesets)
 
-`.github/workflows/publish.yml` triggers on a GitHub release being published. It runs `pnpm build:lib` and then `pnpm publish` using the `NPM_TOKEN` secret. The `files` field in `package.json` is `["dist"]`, so only the built output ships. Bump the version in `package.json` before cutting a release.
+Releases are managed by [Changesets](https://github.com/changesets/changesets) via `.github/workflows/version.yml`. The workflow runs on every push to `main` and operates in two modes:
+
+### Automated flow (no manual npm commands needed)
+
+1. **Add a changeset** — run `pnpm changeset` locally (or create a `.changeset/<name>.md` file manually). Pick a semver bump level (`patch` / `minor` / `major`) and describe the change. Commit and push to `main`.
+2. **CI creates a "Version Packages" PR** — the changesets action detects the changeset file(s), runs `pnpm changeset:version` to bump `package.json` and generate `CHANGELOG.md`, and opens a PR.
+3. **Merge the PR** — once merged, the action runs `pnpm release` which builds the library (`pnpm build:lib`) and publishes via `changeset publish`. It also creates a GitHub Release.
+
+### Manual intervention needed when
+
+- **First-time setup**: the `NPM_TOKEN` secret must be configured in the repo's GitHub Settings → Secrets → Actions. This token needs publish access to the npm package.
+- **Merging the Version PR**: the "Version Packages" PR created by the bot requires a manual merge — this is the intentional approval gate before a release goes out.
+- **No changeset = no release**: pushes to `main` without a `.changeset/*.md` file will not trigger a version bump or publish. The CI will still run but will log "No unpublished projects to publish" and exit successfully.
+
+### Changeset file format
+
+```md
+---
+"dark-blue": patch    # or minor / major
+---
+
+Short description of the change
+```
+
+### Key files
+
+- `.changeset/config.json` — changesets configuration (`access: "public"`, `baseBranch: "main"`)
+- `.github/workflows/version.yml` — CI workflow
+- `package.json` `"release"` script — runs `pnpm build:lib && changeset publish`
+- The `files` field in `package.json` is `["dist"]`, so only the built output ships.
