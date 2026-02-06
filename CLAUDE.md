@@ -25,6 +25,14 @@ Vite is configured for two distinct modes in `vite.config.ts`:
 
 `tsconfig.lib.json` is a separate TS config that runs alongside the library Vite build. It emits **only** `.d.ts` declarations into `dist/`, and explicitly excludes `*.stories.tsx` and `main.tsx`. If you add a file that should ship with the package but isn't a component (e.g. a new top-level utility), make sure it isn't accidentally excluded here.
 
+## Design mockups (Stitch)
+
+The canonical design reference is the Stitch project **"Dark Blue Foundations"**:
+
+<https://stitch.withgoogle.com/projects/775013479836044512>
+
+Screens in the project cover: colour foundations, buttons & form elements, card & surface treatments, navigation & layout patterns, and a light/dark mode comparison. All CSS token values in `globals.css` are derived from these mockups. When adding or modifying components, cross-reference the Stitch screens to ensure visual fidelity.
+
 ## Token / theming system (cross-file contract)
 
 The theming is a three-layer stack that must stay in sync:

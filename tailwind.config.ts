@@ -77,6 +77,10 @@ const config: Config = {
         'glow': '0 0 20px rgba(17, 82, 212, 0.3)',
         'glow-lg': '0 0 30px rgba(17, 82, 212, 0.4)',
         'inner-glow': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.05)',
+        'inner-glow-light': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.8)',
+        'soft-sm': '0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05)',
+        'soft-md': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05)',
+        'soft-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -4px rgba(0, 0, 0, 0.04)',
       },
       keyframes: {
         'fade-in': {
