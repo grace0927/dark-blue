@@ -22,7 +22,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "build:lib": "rm -rf dist && vite build --mode library && tsc -p tsconfig.lib.json",
-    "release": "pnpm build:lib && pnpm publish --access public",
+    "release": "pnpm build:lib && changeset publish",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",

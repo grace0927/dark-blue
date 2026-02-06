@@ -4,6 +4,7 @@
   "commit": false,
   "linked": [],
   "fixed": [],
+  "access": "public",
   "baseBranch": "main",
   "updateDependentsVersions": true,
   "detectEntryPoint": true
