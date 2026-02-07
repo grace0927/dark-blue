@@ -83,6 +83,10 @@ Releases are managed by [Changesets](https://github.com/changesets/changesets) v
 2. **CI creates a "Version Packages" PR** — the changesets action detects the changeset file(s), runs `pnpm changeset:version` to bump `package.json` and generate `CHANGELOG.md`, and opens a PR.
 3. **Merge the PR** — once merged, the action runs `pnpm release` which builds the library (`pnpm build:lib`) and publishes via `changeset publish`. It also creates a GitHub Release.
 
+### Important: never publish manually
+
+Do **not** run `npm publish` or `pnpm publish` locally. Always push to `main` and let the GitHub Actions workflow handle versioning and publishing. The CI has the `NPM_TOKEN` secret configured and manages OTP/2FA automatically.
+
 ### Manual intervention needed when
 
 - **First-time setup**: the `NPM_TOKEN` secret must be configured in the repo's GitHub Settings → Secrets → Actions. This token needs publish access to the npm package.
