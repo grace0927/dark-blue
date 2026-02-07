@@ -94,3 +94,26 @@ export {
   type NavbarIconButtonProps,
   type NavbarUserProps,
 } from './Navbar'
+
+export {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  paginationLinkVariants,
+  PaginationPrevious,
+  PaginationNext,
+  PaginationEllipsis,
+  type PaginationLinkProps,
+} from './Pagination'
+
+export {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  CarouselIndicators,
+  useCarouselContext,
+  type CarouselProps,
+} from './Carousel'

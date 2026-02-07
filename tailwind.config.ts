@@ -115,6 +115,10 @@ const config: Config = {
           '0%': { height: 'var(--radix-accordion-content-height)' },
           '100%': { height: '0' },
         },
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
       },
       animation: {
         'fade-in': 'fade-in 0.2s ease-out',
@@ -125,6 +129,7 @@ const config: Config = {
         'slide-in-from-right': 'slide-in-from-right 0.2s ease-out',
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        shimmer: 'shimmer 2s infinite linear',
       },
     },
   },

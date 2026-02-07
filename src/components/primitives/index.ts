@@ -6,3 +6,16 @@ export { Textarea, textareaVariants, type TextareaProps } from './Textarea'
 export { Checkbox, checkboxVariants, type CheckboxProps } from './Checkbox'
 export { Radio, radioVariants, type RadioProps } from './Radio'
 export { Select, selectVariants, type SelectProps } from './Select'
+export { Badge, badgeVariants, type BadgeProps } from './Badge'
+export { Skeleton, type SkeletonProps } from './Skeleton'
+export {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+  type BreadcrumbProps,
+  type BreadcrumbLinkProps,
+  type BreadcrumbSeparatorProps,
+} from './Breadcrumb'
