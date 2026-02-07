@@ -7,6 +7,17 @@ export { Checkbox, checkboxVariants, type CheckboxProps } from './Checkbox'
 export { Radio, radioVariants, type RadioProps } from './Radio'
 export { Select, selectVariants, type SelectProps } from './Select'
 export { Badge, badgeVariants, type BadgeProps } from './Badge'
+export {
+  Alert,
+  alertVariants,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+  AlertContent,
+  AlertActions,
+  AlertClose,
+  type AlertProps,
+} from './Alert'
 export { Skeleton, type SkeletonProps } from './Skeleton'
 export {
   Breadcrumb,

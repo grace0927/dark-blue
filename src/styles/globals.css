@@ -51,6 +51,17 @@
 
     --radius: 0.5rem;
 
+    /* Alert semantic colors - Light mode */
+    --info: 217 91% 60%;
+    --info-foreground: 221 83% 23%;
+    --info-bg: 214 95% 93%;
+    --info-border: 214 95% 87%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 32 81% 29%;
+    --warning-bg: 48 96% 89%;
+    --warning-border: 48 96% 79%;
+
     /* Surface elevation tokens - Light mode */
     --surface-base: 0 0% 100%;
     --surface-raised: 210 40% 98%;
@@ -93,6 +104,17 @@
     /* Success color - Dark mode */
     --success: 142 71% 45%;
     --success-foreground: 0 0% 100%;
+
+    /* Alert semantic colors - Dark mode */
+    --info: 217 91% 60%;
+    --info-foreground: 210 40% 98%;
+    --info-bg: 217 91% 60% / 0.1;
+    --info-border: 217 91% 60% / 0.3;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 210 40% 98%;
+    --warning-bg: 38 92% 50% / 0.1;
+    --warning-border: 38 92% 50% / 0.3;
 
     /* Surface elevation tokens - Dark mode */
     --surface-base: 220 23% 5%;

@@ -117,3 +117,24 @@ export {
   useCarouselContext,
   type CarouselProps,
 } from './Carousel'
+
+export {
+  MediaPlayer,
+  mediaPlayerVariants,
+  MediaPlayerDisplay,
+  MediaPlayerControls,
+  MediaPlayerOverlay,
+  MediaPlayerScrubber,
+  MediaPlayerPlayButton,
+  mediaPlayerPlayButtonVariants,
+  MediaPlayerButton,
+  MediaPlayerTime,
+  MediaPlayerVolume,
+  MediaPlayerInfo,
+  MediaPlayerTitle,
+  MediaPlayerSubtitle,
+  type MediaPlayerProps,
+  type MediaPlayerScrubberProps,
+  type MediaPlayerPlayButtonProps,
+  type MediaPlayerVolumeProps,
+} from './MediaPlayer'

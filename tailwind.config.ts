@@ -58,6 +58,18 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        info: {
+          DEFAULT: 'hsl(var(--info))',
+          foreground: 'hsl(var(--info-foreground))',
+          bg: 'hsl(var(--info-bg))',
+          border: 'hsl(var(--info-border))',
+        },
+        warning: {
+          DEFAULT: 'hsl(var(--warning))',
+          foreground: 'hsl(var(--warning-foreground))',
+          bg: 'hsl(var(--warning-bg))',
+          border: 'hsl(var(--warning-border))',
+        },
         surface: {
           base: 'hsl(var(--surface-base))',
           raised: 'hsl(var(--surface-raised))',
