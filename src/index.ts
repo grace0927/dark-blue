@@ -1,3 +1,5 @@
+"use client";
+
 // Styles (side-effect import for CSS bundling)
 import './styles/globals.css'
 
