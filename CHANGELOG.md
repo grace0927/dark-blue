@@ -1,5 +1,11 @@
 # dark-blue
 
+## 0.3.0
+
+### Minor Changes
+
+- Add Alert and MediaPlayer components, fix CSS export paths, add React 19 support
+
 ## 0.2.0
 
 ### Minor Changes
