@@ -1,5 +1,11 @@
 # dark-blue
 
+## 0.3.1
+
+### Patch Changes
+
+- Add "use client" directive to built output for Next.js RSC compatibility, fix CSS export path to dist/index.css
+
 ## 0.3.0
 
 ### Minor Changes

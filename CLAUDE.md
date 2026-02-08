@@ -64,7 +64,7 @@ src/components/layout/index.ts      →  re-exports all layout components
 src/index.ts                        →  re-exports the three above + hooks + cn
 ```
 
-`src/index.ts` also has a side-effect import of `globals.css`, which is how the CSS tokens end up in the built `dist/style.css`. A new component needs to be wired into its directory's `index.ts`; it will automatically appear in the package's public surface.
+`src/index.ts` also has a side-effect import of `globals.css`, which is how the CSS tokens end up in the built `dist/index.css`. A new component needs to be wired into its directory's `index.ts`; it will automatically appear in the package's public surface.
 
 ## Storybook contract
 
