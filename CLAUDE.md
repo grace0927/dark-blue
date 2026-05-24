@@ -25,6 +25,22 @@ Vite is configured for two distinct modes in `vite.config.ts`:
 
 `tsconfig.lib.json` is a separate TS config that runs alongside the library Vite build. It emits **only** `.d.ts` declarations into `dist/`, and explicitly excludes `*.stories.tsx` and `main.tsx`. If you add a file that should ship with the package but isn't a component (e.g. a new top-level utility), make sure it isn't accidentally excluded here.
 
+## Component catalog
+
+Current public surface (all exported from `src/index.ts`):
+
+**Primitives**: Alert, Badge, Breadcrumb, Button, Checkbox, Input, Label, PasswordInput, Radio, Select, Skeleton, Textarea
+
+**Composite**: Accordion, Card (+ CardHeader/CardTitle/CardDescription/CardContent/CardFooter), Carousel, Dropdown, MediaPlayer, Modal, Navbar, Pagination, Sidebar, Tabs, Toast (+ `useToast` hook)
+
+**Layout**: Container, Footer, Grid, Stack
+
+**Hooks**: `useTheme` (+ `themeScript` for SSR FOUC prevention)
+
+**Utilities**: `cn` (class merging)
+
+The README component list is intentionally short — treat this section as the authoritative catalog.
+
 ## Design mockups (Stitch)
 
 The canonical design reference is the Stitch project **"Dark Blue Foundations"**:
